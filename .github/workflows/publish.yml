@@ -1,0 +1,22 @@
+name: Build and Publish Docs
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  # Required to mint a GitHub OIDC token for dp-workers publish auth.
+  # https://docs.github.com/actions/reference/security/oidc
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish site
+        # Uses the public publish action repo for this MVP.
+        # Replace with your own fork if you move or customize the action.
+        uses: BrendonGor/dp-publish-workflow@main
