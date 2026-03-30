@@ -17,6 +17,4 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Publish site
-        # Uses the public publish action repo for this MVP.
-        # Replace with your own fork if you move or customize the action.
         uses: BrendonGor/dp-publish-workflow@main
